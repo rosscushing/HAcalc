@@ -6,19 +6,19 @@ body {
 }
 
 header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
 #logo {
-    width: 300px; /* Increased size */
+    width: 350px; /* Increased size */
 }
 
 label, select, input, button {
     margin-top: 10px;
     margin-bottom: 10px;
     display: block;
-    width: 300px; /* Set a fixed width for form elements */
+    width: 500px; /* Set a fixed width for form elements */
 }
 
 button {
