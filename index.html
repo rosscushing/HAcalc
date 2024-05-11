@@ -8,10 +8,10 @@
 </head>
 <body>
     <header>
-        <img src="LBHlogo.png" alt="Live Better Hearing" id="logo">
+        <img src="your-logo.png" alt="Company Logo" id="logo">
     </header>
     <h1>Hearing Aid Trade-In Value Calculator</h1>
-    <p>Please fill out the information below to calculate the trade-in value per hearing aid.</p>
+    <p>Please fill out the information below to calculate the trade-in value per hearing aid device.</p>
     <form id="tradeInForm">
         <label for="purchaseSource">Was the hearing aid purchased directly from us?</label>
         <select id="purchaseSource">
@@ -19,13 +19,13 @@
             <option value="thirdParty">No</option>
         </select><br>
 
-        <label for="purchasePrice">What was the original purchase price:</label>
+        <label for="purchasePrice">Original purchase price:</label>
         <input type="number" id="purchasePrice" required><br>
 
-        <label for="age">What is the age of the hearing aid (in years):</label>
+        <label for="age">Age of the hearing aid (in years):</label>
         <input type="number" id="age" required><br>
 
-        <button type="button" onclick="calculateTradeInValue()">Calculate Trade-In Value</button>
+        <button type="button" onclick="calculateTradeInValue()" id="calculateButton">Calculate Trade-In Value</button>
     </form>
     <div id="result"></div>
 
