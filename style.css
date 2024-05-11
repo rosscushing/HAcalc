@@ -1,0 +1,17 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+label, select, input, button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: green;
+}
