@@ -6,19 +6,24 @@ body {
 }
 
 header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 #logo {
-    width: 350px; /* Increased size */
+    width: 350px; 
 }
 
-label, select, input, button {
+label {
+    display: inline-block; 
+    width: 100%; 
     margin-top: 10px;
     margin-bottom: 10px;
-    display: block;
-    width: 500px; /* Set a fixed width for form elements */
+}
+
+select, input {
+    width: 100%; 
+    margin-bottom: 10px;
 }
 
 button {
