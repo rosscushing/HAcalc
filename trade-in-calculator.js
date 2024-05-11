@@ -1,3 +1,9 @@
+document.getElementById('tradeInForm').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        calculateTradeInValue();
+    }
+});
+
 function calculateTradeInValue() {
     const purchaseSource = document.getElementById('purchaseSource').value;
     const purchasePrice = parseInt(document.getElementById('purchasePrice').value);
@@ -10,7 +16,7 @@ function calculateTradeInValue() {
             if (age < 3) {
                 tradeInValue = 500;
             } else if (age === 4) {
-                tradeInValue = 400; 
+                tradeInValue = 400; // Adjusting condition to match the exact age
             }
         } else if (purchasePrice >= 1800 && purchasePrice <= 2499) {
             if (age < 3) {
@@ -20,7 +26,7 @@ function calculateTradeInValue() {
             }
         } else if (purchasePrice >= 1300 && purchasePrice <= 1799 && age < 3) {
             tradeInValue = 300;
-        } else if (purchasePrice === 2500 && age >= 3 && age <= 4) {
+        } else if (purchasePrice === 2500 && age >= 3 && age <= 4) { // Explicit condition for price exactly $2500
             tradeInValue = 300;
         }
     } else if (age < 3) {
