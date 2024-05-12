@@ -13,27 +13,34 @@ function calculateTradeInValue() {
     let age = currentYear - purchaseYear;
     let tradeInValue = 100; // Default minimum value
 
-    // Check if the hearing aid is 5 years old or older
-    if (age >= 5) {
-        if (purchaseSource === 'direct') {
-            tradeInValue = 50; // Direct purchase, 5 years ago or more
+    if (purchaseSource === 'direct') {
+        if (age <= 5) {
+            tradeInValue = calculateWeightedValue(purchasePrice, age);
         } else {
-            tradeInValue = 25; // Not purchased directly, 5 years ago or more
+            tradeInValue = 25; // Default for hearing aids older than 5 years not purchased directly
         }
-    } else if (purchaseSource === 'direct' && age < 5) {
-        // Calculate trade-in value for less than 5 years old and purchased directly
-        if (purchasePrice >= 2500) {
-            tradeInValue = calculateWeightedValue(purchasePrice, age, 500);
-        } else if (purchasePrice >= 2000) {
-            tradeInValue = calculateWeightedValue(purchasePrice, age, 400);
-        } else if (purchasePrice >= 1500) {
-            tradeInValue = calculateWeightedValue(purchasePrice, age, 300);
-        } else if (purchasePrice >= 1000) {
-            tradeInValue = calculateWeightedValue(purchasePrice, age, 200);
-        } else {
-            tradeInValue = calculateWeightedValue(purchasePrice, age, 100);
-        }
+    } else {
+        tradeInValue = 25; // Default for all non-directly purchased hearing aids older than 5 years
     }
+
+    document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
+    document.getElementById('result').style.display = 'block';
+}
+
+function calculateWeightedValue(purchasePrice, age) {
+    const maxValues = [500, 400, 350, 300, 250, 190]; // Max values for each year from 0 to 5
+    let baseValue = 100; // The lowest possible trade-in value
+
+    if (age < maxValues.length) {
+        let maxValue = maxValues[age];
+        let range = maxValue - baseValue;
+        let depreciationPerYear = Math.floor(range / (age + 1) / 10) * 10;
+        return maxValue - (depreciationPerYear * age);
+    }
+
+    return baseValue; // Return the lowest value if something goes wrong or if age is unexpectedly high
+}
+
 
     document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
     document.getElementById('result').style.display = 'block';
