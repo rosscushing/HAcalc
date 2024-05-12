@@ -16,8 +16,7 @@ header {
     max-width: 400px; /* Maximum width to control logo size */
 }
 
-#result {
-    display: none; /* Initially hidden, make sure 'block' is set correctly on display */
+#result, #resultForTwo {
     background-color: #e8f4fc;
     padding: 15px;
     border-radius: 5px;
@@ -26,6 +25,7 @@ header {
     font-size: 18px;
     color: #006600;
     text-align: left;
+    display: none; /* Initially hidden */
 }
 
 label, select, input, button {
