@@ -3,11 +3,11 @@ body {
     padding: 20px;
     background-color: #f4f4f9;
     color: #333;
-    margin: 0;
+    margin: 0; /* Ensures there is no unwanted margin around the edges */
 }
 
 header {
-    text-align: left;
+    text-align: left; /* Aligns the header content to the left */
     margin-bottom: 20px;
 }
 
@@ -17,9 +17,10 @@ header {
 }
 
 form {
-    max-width: 600px;
+    text-align: left; /* Ensures all form elements are left-aligned */
     width: 100%; /* Full width on smaller screens */
-    margin: 0 auto; /* Centering the form in the page */
+    max-width: 600px; /* Maximum width to prevent form from being too wide on larger screens */
+    margin: 0 auto; /* Centers the form in the page */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -29,14 +30,19 @@ form {
 label, select, input, button {
     width: 100%; /* Full width for better control and responsiveness */
     box-sizing: border-box; /* Include padding and border in width */
-    text-align: left; /* Ensure text alignment is left */
+    margin-bottom: 10px; /* Space between form elements */
+}
+
+label {
+    color: #555; /* Darker text for better readability */
+    font-size: 16px; /* Slightly larger font size for labels */
 }
 
 select, input {
     padding: 10px;
-    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px; /* Larger font size for better readability in dropdowns and inputs */
 }
 
 button {
@@ -46,17 +52,17 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: block; /* Ensure the button is a block element to fill width */
+    display: block; /* Ensures the button is a block element */
     margin-top: 20px;
-    margin-bottom: 20px; /* Spacing after the button */
+    margin-bottom: 20px; /* Additional spacing below the button */
 }
 
 button:hover {
-    background-color: #004080;
+    background-color: #004080; /* Darker color on hover for better user feedback */
 }
 
 #result {
-    display: none; /* Initially hidden */
+    display: none; /* Initially hidden to only show upon calculation */
     background-color: #e8f4fc;
     padding: 15px;
     border-radius: 5px;
@@ -64,13 +70,13 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
     color: #006600;
-    text-align: left;
+    text-align: left; /* Keeps text aligned to the left */
 }
 
 /* Media Query for Small Devices */
 @media (max-width: 600px) {
     #logo {
-        max-width: 300px; /* Smaller logo for smaller screens */
+        max-width: 300px; /* Adjusts logo size for very small screens */
     }
 }
 
