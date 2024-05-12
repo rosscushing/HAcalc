@@ -1,7 +1,9 @@
-document.getElementById('tradeInForm').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-        calculateTradeInValue();
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('tradeInForm').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            calculateTradeInValue();
+        }
+    });
 });
 
 function calculateTradeInValue() {
@@ -13,31 +15,31 @@ function calculateTradeInValue() {
     let age = currentYear - purchaseYear;
     let tradeInValue = 100; // Default minimum value
 
-    if (purchaseSource === 'direct') {
-        if (age <= 5) {
-            tradeInValue = calculateWeightedValue(purchasePrice, age);
-        } else {
-            tradeInValue = 25; // Default for hearing aids older than 5 years not purchased directly
-        }
-    } else {
-        tradeInValue = 25; // Default for all non-directly purchased hearing aids older than 5 years
+    if (age > 5) {
+        tradeInValue = purchaseSource === 'direct' ? 50 : 25;
+    } else if (purchaseSource === 'direct') {
+        tradeInValue = calculateSlidingScaleValue(purchasePrice, age);
     }
 
     document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
     document.getElementById('result').style.display = 'block';
 }
 
-function calculateWeightedValue(purchasePrice, age) {
-    const maxValues = [500, 400, 350, 300, 250, 190]; // Max values for each year from 0 to 5
-    let baseValue = 100; // The lowest possible trade-in value
-
-    if (age < maxValues.length) {
-        let maxValue = maxValues[age];
-        let range = maxValue - baseValue;
-        let depreciationPerYear = Math.floor(range / (age + 1) / 10) * 10;
-        return maxValue - (depreciationPerYear * age);
+function calculateSlidingScaleValue(purchasePrice, age) {
+    let tradeInValue;
+    if (purchasePrice >= 2500) {
+        tradeInValue = 500;
+    } else if (purchasePrice >= 2000) {
+        tradeInValue = 400;
+    } else if (purchasePrice >= 1500) {
+        tradeInValue = 300;
+    } else if (purchasePrice >= 1000) {
+        tradeInValue = 200;
+    } else {
+        tradeInValue = 100;
     }
 
-    return baseValue; // Return the lowest value if something goes wrong or if age is unexpectedly high
+    // Calculate depreciation based on the number of years, reducing the value by $10 per year
+    const depreciation = (tradeInValue - 100) * (age / 5); // Depreciate over a scale of 5 years
+    return tradeInValue - depreciation;
 }
-
