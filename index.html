@@ -42,9 +42,7 @@
         </select><br>
 
         <label for="purchaseYear">Year of Purchase:</label>
-        <select id="purchaseYear" required>
-            ${Array.from(new Array(11), (val, index) => `<option value="${new Date().getFullYear() - index}">${new Date().getFullYear() - index}</option>`).join('')}
-        </select><br>
+        <select id="purchaseYear" required></select><br>
 
         <label for="purchasePrice">Original purchase price (for one hearing aid): $</label>
         <input type="number" id="purchasePrice" required placeholder="Enter amount in dollars"><br>
@@ -57,5 +55,3 @@
     <script src="trade-in-calculator.js"></script>
 </body>
 </html>
-
-
