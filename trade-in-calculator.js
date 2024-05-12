@@ -14,8 +14,10 @@ function calculateTradeInValue() {
     // Detailed logic to handle the calculation based on the input
     if (purchaseSource === 'direct') {
         if (purchasePrice >= 2500) {
-            if (age <= 3) {
+            if (age <= 2) {
                 tradeInValue = 500;
+            } else if (age > 2 && age <= 3) {
+                tradeInValue = 400;
             } else if (age > 3 && age <= 4) {
                 tradeInValue = 300;
             } else if (age > 4 && age <= 5) {
