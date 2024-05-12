@@ -17,26 +17,26 @@ function calculateTradeInValue() {
             if (age < 3) {
                 tradeInValue = 500;
             } else if (age >= 3 && age <= 4) {
-                tradeInValue = 300; // Adjusted for clarity to include devices exactly 3 years old
-            }
+                tradeInValue = 300;
             } else if (age > 4 && age <= 5) {
-                tradeInValue = 200; 
+                tradeInValue = 200;
             }
         } else if (purchasePrice >= 1800 && purchasePrice <= 2499) {
             if (age < 2) {
                 tradeInValue = 400;
             } else if (age >= 2 && age <= 3) {
                 tradeInValue = 300;
-            }
             } else if (age >= 3 && age <= 4) {
                 tradeInValue = 200;
             }
-        } else if (purchasePrice >= 1300 && purchasePrice <= 1799 && age < 3) {
-            tradeInValue = 275;
-        }
+        } else if (purchasePrice >= 1300 && purchasePrice <= 1799) {
+            if (age < 3) {
+                tradeInValue = 275;
             } else if (age >= 3 && age <= 4) {
                 tradeInValue = 175;
             }
+        }
+    }
 
     document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
 }
