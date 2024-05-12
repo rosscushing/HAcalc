@@ -41,16 +41,3 @@ function calculateWeightedValue(purchasePrice, age) {
     return baseValue; // Return the lowest value if something goes wrong or if age is unexpectedly high
 }
 
-
-    document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
-    document.getElementById('result').style.display = 'block';
-}
-
-function calculateWeightedValue(purchasePrice, age, maxTradeInValue) {
-    const baseValue = 100; // The lowest value possible
-    const range = maxTradeInValue - baseValue; // Total possible decrement
-    const depreciationPerYear = Math.floor((range / 5) * ((5 - age) / 5) / 10) * 10; // Adjusted to 5-year scale
-    return maxTradeInValue - (depreciationPerYear * age);
-}
-
-
