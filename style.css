@@ -16,15 +16,16 @@ header {
     max-width: 400px; /* Maximum width to control logo size */
 }
 
-form {
-    text-align: left; /* Ensures all form elements are left-aligned */
-    width: 100%; /* Full width on smaller screens */
-    max-width: 600px; /* Maximum width to prevent form from being too wide on larger screens */
-    margin: 0 auto; /* Centers the form in the page */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+#result {
+    display: none; /* Initially hidden, make sure 'block' is set correctly on display */
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #b6dfff;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #006600;
+    text-align: left;
 }
 
 label, select, input, button {
