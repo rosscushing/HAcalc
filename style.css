@@ -16,18 +16,6 @@ header {
     max-width: 400px; /* Maximum width to control logo size */
 }
 
-#result, #resultForTwo {
-    background-color: #e8f4fc;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #b6dfff;
-    margin-top: 20px;
-    font-size: 18px;
-    color: #006600;
-    text-align: left;
-    display: none; /* Initially hidden */
-}
-
 label, select, input, button {
     width: 100%; /* Full width for better control and responsiveness */
     box-sizing: border-box; /* Include padding and border in width */
@@ -62,8 +50,7 @@ button:hover {
     background-color: #004080; /* Darker color on hover for better user feedback */
 }
 
-#result {
-    display: none; /* Initially hidden to only show upon calculation */
+#result, #resultForTwo {
     background-color: #e8f4fc;
     padding: 15px;
     border-radius: 5px;
@@ -71,7 +58,8 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
     color: #006600;
-    text-align: left; /* Keeps text aligned to the left */
+    text-align: left;
+    display: none; /* Initially hidden */
 }
 
 /* Media Query for Small Devices */
