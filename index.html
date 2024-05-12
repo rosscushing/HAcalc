@@ -19,14 +19,27 @@
             <option value="thirdParty">No</option>
         </select><br>
 
-        <label for="purchasePrice">Original purchase price:</label>
-        <input type="number" id="purchasePrice" required><br>
-
         <label for="purchaseMonth">Month of Purchase:</label>
-        <input type="number" id="purchaseMonth" min="1" max="12" required placeholder="Month (1-12)"><br>
+        <select id="purchaseMonth" required>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select><br>
 
         <label for="purchaseYear">Year of Purchase:</label>
         <input type="number" id="purchaseYear" required placeholder="Year (e.g., 2020)"><br>
+
+        <label for="purchasePrice">Original purchase price:</label>
+        <input type="number" id="purchasePrice" required><br>
 
         <button type="button" onclick="calculateTradeInValue()">Calculate Trade-In Value</button>
     </form>
