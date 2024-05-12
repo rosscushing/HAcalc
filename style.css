@@ -69,7 +69,10 @@ button:hover {
     font-size: 18px;
     color: #006600;
     text-align: left;
-    display: none; /* Initially hide the result div */
+    display: block;  // Ensures the div is treated as a block-level element
+    width: 50%;      // Sets the width to 50% of its parent container
+    margin-left: 0;  // Aligns the box to the left
+    margin-right: 0; // Ensures no auto margin on the right
 }
 
 /* Ensuring no extra space or elements are creating the blue line */
