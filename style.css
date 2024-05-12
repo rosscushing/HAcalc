@@ -3,44 +3,40 @@ body {
     padding: 20px;
     background-color: #f4f4f9;
     color: #333;
-    margin: 0; /* Removes margin to prevent unwanted space around the edges */
+    margin: 0;
 }
 
 header {
-    text-align: left; /* Aligns the header content to the left */
+    text-align: left;
     margin-bottom: 20px;
 }
 
 #logo {
-    width: 400px; /* Adjust logo size as needed */
+    width: 100%; /* Use percentage for responsive sizing */
+    max-width: 400px; /* Maximum width to control logo size */
 }
 
 form {
     max-width: 600px;
+    width: 100%; /* Full width on smaller screens */
+    margin: 0 auto; /* Centering the form in the page */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: none; /* Ensures there is no extra border */
 }
 
-label {
-    display: block;
-    margin: 12px 0;
-    color: #555;
-    font-size: 16px;
-    text-align: left; /* Ensures labels are left-aligned */
+label, select, input, button {
+    width: 100%; /* Full width for better control and responsiveness */
+    box-sizing: border-box; /* Include padding and border in width */
+    text-align: left; /* Ensure text alignment is left */
 }
 
 select, input {
-    width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    text-align: left; /* This ensures the text within the select box is aligned left */
-    display: block; /* Ensures elements are displayed as block to fill the form width */
 }
 
 button {
@@ -50,10 +46,9 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: block;
-    width: initial; /* Lets button size naturally according to its content */
+    display: block; /* Ensure the button is a block element to fill width */
     margin-top: 20px;
-    margin-left: 0; /* Aligns button to the left */
+    margin-bottom: 20px; /* Spacing after the button */
 }
 
 button:hover {
@@ -61,6 +56,7 @@ button:hover {
 }
 
 #result {
+    display: none; /* Initially hidden */
     background-color: #e8f4fc;
     padding: 15px;
     border-radius: 5px;
@@ -69,14 +65,11 @@ button:hover {
     font-size: 18px;
     color: #006600;
     text-align: left;
-    display: block;  // Ensures the div is treated as a block-level element
-    width: 50%;      // Sets the width to 50% of its parent container
-    margin-left: 0;  // Aligns the box to the left
-    margin-right: 0; // Ensures no auto margin on the right
 }
 
-/* Ensuring no extra space or elements are creating the blue line */
-body, html {
-    height: 100%;
-    overflow: hidden; /* Prevents scrolling to see if it removes the blue line */
+/* Media Query for Small Devices */
+@media (max-width: 600px) {
+    #logo {
+        max-width: 300px; /* Smaller logo for smaller screens */
+    }
 }
