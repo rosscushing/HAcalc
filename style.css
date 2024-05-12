@@ -18,8 +18,8 @@ header {
 
 form {
     max-width: 600px;
-    width: 100%; /* Full width on smaller screens */
-    margin: 0 auto; /* Centering the form in the page */
+    width: 100%; 
+    margin: 0; 
     padding: 20px;
     background-color: white;
     border-radius: 8px;
