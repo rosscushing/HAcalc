@@ -69,6 +69,7 @@ button:hover {
     font-size: 18px;
     color: #006600;
     text-align: left;
+    display: none; /* Initially hide the result div */
 }
 
 /* Ensuring no extra space or elements are creating the blue line */
