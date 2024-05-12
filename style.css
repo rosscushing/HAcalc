@@ -59,9 +59,18 @@ button:hover {
     font-size: 18px;
     color: #006600;
     text-align: left;
-    display: none; /* Initially hidden */
+    display: block; /* Make sure it is displayed as block */
+    width: 100%; /* Ensures full width for consistency */
+    box-sizing: border-box; /* Includes padding in width calculation */
 }
 
+/* Additional styling to differentiate results */
+.result-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f4f4f9; /* Light background for the container */
+    border-left: 5px solid #0056b3; /* Adds a blue left border for emphasis */
+}
 /* Media Query for Small Devices */
 @media (max-width: 600px) {
     #logo {
