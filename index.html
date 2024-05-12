@@ -11,10 +11,9 @@
         <img src="LBHlogo.png" alt="LBH logo" id="logo">
     </header>
     <h1>Hearing Aid Trade-In Value Calculator</h1>
-    <p>Please fill out the information below to calculate the trade-in value per hearing aid.</p>
-    <br>Hearing aids purchased from 3rd parties or from other sources have a maximimum trade in value of $100.</br>
+    <p>Please fill out the information below to calculate the trade-in value per hearing aid. Hearing aids purchased from 3rd parties or from other sources have a maximum trade-in value of $100.</p>
     <form id="tradeInForm">
-        <label for="purchaseSource">Was the trade-in hearing aid purchased directly from us?</label>
+        <label for="purchaseSource">Was the hearing aid purchased directly from us?</label>
         <select id="purchaseSource">
             <option value="direct">Yes</option>
             <option value="thirdParty">No</option>
@@ -37,14 +36,14 @@
         </select><br>
 
         <label for="purchaseYear">Year of Purchase:</label>
-        <input type="number" id="purchaseYear" required placeholder="Year (e.g., 2020)"><br>
+        <input type="number" id="purchaseYear" required><br>
 
         <label for="purchasePrice">Original purchase price:</label>
         <input type="number" id="purchasePrice" required><br>
 
         <button type="button" onclick="calculateTradeInValue()">Calculate Trade-In Value</button>
     </form>
-    <div id="result"></div>
+    <div id="result" style="display:none;"></div>
 
     <script src="trade-in-calculator.js"></script>
 </body>
