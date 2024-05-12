@@ -13,7 +13,7 @@ function populateYearDropdown() {
     for (let i = 0; i <= 10; i++) {
         const yearOption = document.createElement('option');
         yearOption.value = currentYear - i;
-        yearOption.text = currentYear - i;
+        yearOption.textContent = currentYear - i;
         purchaseYearSelect.appendChild(yearOption);
     }
 }
@@ -57,3 +57,4 @@ function calculateSlidingScaleValue(purchasePrice, age) {
     const depreciation = (tradeInValue - 100) * (age / 5); // Depreciate over a scale of 5 years
     return Math.max(100, tradeInValue - depreciation);  // Ensure value does not drop below $100
 }
+
