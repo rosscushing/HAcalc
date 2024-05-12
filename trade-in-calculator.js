@@ -1,17 +1,19 @@
-document.getElementById('tradeInForm').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-        calculateTradeInValue();
-    }
-});
-
 function calculateTradeInValue() {
     const purchaseSource = document.getElementById('purchaseSource').value;
+    const purchaseMonth = parseInt(document.getElementById('purchaseMonth').value);
+    const purchaseYear = parseInt(document.getElementById('purchaseYear').value);
     const purchasePrice = parseInt(document.getElementById('purchasePrice').value);
-    const age = parseInt(document.getElementById('age').value);
+
+    const currentMonth = new Date().getMonth() + 1;
+    const currentYear = new Date().getFullYear();
+
+    let age = currentYear - purchaseYear;
+    if (currentMonth < purchaseMonth) {
+        age--;
+    }
 
     let tradeInValue = 100; // Default fallback value
 
-    // Detailed logic to handle the calculation based on the input
     if (purchaseSource === 'direct') {
         if (purchasePrice >= 2500) {
             if (age <= 2) {
