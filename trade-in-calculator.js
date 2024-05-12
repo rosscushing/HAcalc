@@ -15,13 +15,18 @@ function calculateTradeInValue() {
     let age = currentYear - purchaseYear;
     let tradeInValue = 100; // Default minimum value
 
-    if (age > 5) {
+    // Cap for hearing aids purchased for less than $2000
+    if (purchasePrice < 2000) {
+        tradeInValue = Math.min(250, calculateSlidingScaleValue(purchasePrice, age));
+    } else if (age > 5) {
+        // Set fixed values for hearing aids older than 5 years
         tradeInValue = purchaseSource === 'direct' ? 50 : 25;
     } else if (purchaseSource === 'direct') {
+        // Calculate value based on sliding scale for hearing aids less than 5 years old and purchased directly
         tradeInValue = calculateSlidingScaleValue(purchasePrice, age);
     }
 
-    document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
+    document.getElementById('result').innerText = `Trade-In Value for One Hearing Aid: $${tradeInValue}`;
     document.getElementById('result').style.display = 'block';
 }
 
@@ -41,5 +46,5 @@ function calculateSlidingScaleValue(purchasePrice, age) {
 
     // Calculate depreciation based on the number of years, reducing the value by $10 per year
     const depreciation = (tradeInValue - 100) * (age / 5); // Depreciate over a scale of 5 years
-    return tradeInValue - depreciation;
+    return Math.max(100, tradeInValue - depreciation);  // Ensure value does not drop below $100
 }
