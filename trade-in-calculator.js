@@ -1,9 +1,27 @@
+document.getElementById('tradeInForm').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        if (validateInputs()) {
+            calculateTradeInValue();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    }
+});
+
+function validateInputs() {
+    const purchaseSource = document.getElementById('purchaseSource').value;
+    const purchaseMonth = document.getElementById('purchaseMonth').value;
+    const purchaseYear = document.getElementById('purchaseYear').value;
+    const purchasePrice = document.getElementById('purchasePrice').value;
+
+    return purchaseSource && purchaseMonth && purchaseYear && purchasePrice; // Ensures all fields are not empty
+}
+
 function calculateTradeInValue() {
     const purchaseSource = document.getElementById('purchaseSource').value;
     const purchaseMonth = parseInt(document.getElementById('purchaseMonth').value);
     const purchaseYear = parseInt(document.getElementById('purchaseYear').value);
     const purchasePrice = parseInt(document.getElementById('purchasePrice').value);
-
     const currentMonth = new Date().getMonth() + 1;
     const currentYear = new Date().getFullYear();
 
