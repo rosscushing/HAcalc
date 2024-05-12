@@ -3,25 +3,25 @@ body {
     padding: 20px;
     background-color: #f4f4f9;
     color: #333;
-    margin: 0; /* Ensures there is no unwanted margin around the edges */
+    margin: 0; /* Removes margin to prevent unwanted space around the edges */
 }
 
 header {
-    text-align: left;
+    text-align: left; /* Aligns the header content to the left */
     margin-bottom: 20px;
 }
 
 #logo {
-    width: 200px;
+    width: 200px; /* Adjust logo size as needed */
 }
 
 form {
     max-width: 600px;
-    margin: 0 auto; /* Centers the form on the page */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none; /* Ensures there is no extra border */
 }
 
 label {
@@ -29,6 +29,7 @@ label {
     margin: 12px 0;
     color: #555;
     font-size: 16px;
+    text-align: left; /* Ensures labels are left-aligned */
 }
 
 select, input {
@@ -38,6 +39,8 @@ select, input {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    text-align: left; /* This ensures the text within the select box is aligned left */
+    display: block; /* Ensures elements are displayed as block to fill the form width */
 }
 
 button {
@@ -48,8 +51,9 @@ button {
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    width: auto;
+    width: initial; /* Lets button size naturally according to its content */
     margin-top: 20px;
+    margin-left: 0; /* Aligns button to the left */
 }
 
 button:hover {
@@ -65,4 +69,10 @@ button:hover {
     font-size: 18px;
     color: #006600;
     text-align: left;
+}
+
+/* Ensuring no extra space or elements are creating the blue line */
+body, html {
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling to see if it removes the blue line */
 }
