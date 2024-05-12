@@ -6,54 +6,65 @@ body {
 }
 
 header {
-    text-align: left; /* Ensures logo alignment is to the left */
+    text-align: left; /* Align logo to the left */
     margin-bottom: 20px;
 }
 
 #logo {
-    width: 350px; /* Adjust width as necessary */
+    width: 200px; /* Adjusted width for better visual balance */
+}
+
+form {
+    max-width: 600px; /* Limit form width for better readability */
+    margin: 0 auto; /* Center form on page */
+    padding: 20px;
+    background-color: white; /* Light background for the form area */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 label {
-    display: block; /* Ensures labels are on a new line, adjust as inline-block if needed */
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    display: block; /* Each label on a new line */
+    margin: 12px 0; /* Spacing above and below labels */
+    color: #555; /* Darker text for better readability */
+    font-size: 16px; /* Slightly larger text */
 }
 
 select, input {
-    width: 20%; 
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 3px #ddd;
-    display: block; /* Makes inputs take a new line */
-    margin: 0 auto 10px; /* Centers inputs and adds bottom margin */
+    width: 100%; /* Full width inputs for easier interaction */
+    padding: 10px; /* Padding for better touch interaction */
+    margin-top: 5px; /* Space between label and input */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Box sizing to include padding in width */
 }
 
 button {
-    padding: 10px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block; /* Ensures button is on a new line */
-    width: 20%; /* Button width adjusted */
-    margin: 20px auto 0; /* Centers button and adds top margin */
+    width: auto; /* Auto width based on content */
+    padding: 10px 20px; /* Padding for a larger clickable area */
+    margin-top: 20px; /* Space above the button */
+    background-color: #0056b3; /* Primary color for button */
+    color: white; /* Text color for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor indicates clickable */
+    display: block; /* Block display to align it center */
+    margin-left: auto; /* Align button to the right */
+    margin-right: auto; /* Center align */
 }
 
 button:hover {
-    background-color: #003d80;
+    background-color: #004080; /* Darker shade on hover for interaction feedback */
 }
 
 #result {
-    background-color: #e8f4fc;
+    margin-top: 20px; /* Space above result display */
     padding: 15px;
-    margin-top: 20px; /* Ensures there is space between the form and result display */
+    background-color: #e8f4fc; /* Light blue background for result */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #b6dfff; /* Light blue border */
+    text-align: center; /* Center text */
+    color: #006600; /* Green color for result value */
+    font-size: 18px; /* Larger font size for visibility */
 }
 
-    button {
-        margin-top: 10px; /* Adjusts margin for smaller devices */
-    }
-}
