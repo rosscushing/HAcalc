@@ -50,15 +50,9 @@ button:hover {
 #result {
     background-color: #e8f4fc;
     padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #b6dfff;
     margin-top: 20px; /* Ensures there is space between the form and result display */
 }
 
-@media (max-width: 600px) {
-    label, select, input, button {
-        width: 100%;
-    }
     button {
         margin-top: 10px; /* Adjusts margin for smaller devices */
     }
