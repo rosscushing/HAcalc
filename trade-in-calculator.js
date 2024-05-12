@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    populateYearDropdown();
     document.getElementById('tradeInForm').addEventListener('keyup', function(event) {
         if (event.key === 'Enter') {
             calculateTradeInValue();
@@ -6,14 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function populateYearDropdown() {
+    const purchaseYearSelect = document.getElementById('purchaseYear');
+    const currentYear = new Date().getFullYear();
+    for (let i = 0; i <= 10; i++) {
+        const yearOption = document.createElement('option');
+        yearOption.value = currentYear - i;
+        yearOption.text = currentYear - i;
+        purchaseYearSelect.appendChild(yearOption);
+    }
+}
+
 function calculateTradeInValue() {
     const purchaseSource = document.getElementById('purchaseSource').value;
     const deviceType = document.getElementById('deviceType').value;
     const purchasePrice = parseInt(document.getElementById('purchasePrice').value);
-    const purchaseYear = document.getElementById('purchaseYear').value;
+    const purchaseYear = parseInt(document.getElementById('purchaseYear').value);
     const currentYear = new Date().getFullYear();
 
-    let age = currentYear - parseInt(purchaseYear);
+    let age = currentYear - purchaseYear;
     let tradeInValue = 100; // Default minimum value
 
     if (purchasePrice < 2000) {
@@ -45,4 +57,3 @@ function calculateSlidingScaleValue(purchasePrice, age) {
     const depreciation = (tradeInValue - 100) * (age / 5); // Depreciate over a scale of 5 years
     return Math.max(100, tradeInValue - depreciation);  // Ensure value does not drop below $100
 }
-
