@@ -26,7 +26,7 @@ function calculateTradeInValue() {
         tradeInValue = calculateSlidingScaleValue(purchasePrice, age);
     }
 
-    document.getElementById('result').innerText = `Trade-In Value for One Hearing Aid: $${tradeInValue}`;
+    document.getElementById('result').innerText = `Trade-In Value: $${tradeInValue}`;
     document.getElementById('result').style.display = 'block';
 }
 
@@ -48,3 +48,4 @@ function calculateSlidingScaleValue(purchasePrice, age) {
     const depreciation = (tradeInValue - 100) * (age / 5); // Depreciate over a scale of 5 years
     return Math.max(100, tradeInValue - depreciation);  // Ensure value does not drop below $100
 }
+
