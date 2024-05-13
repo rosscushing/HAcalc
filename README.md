@@ -1,11 +1,11 @@
 ## Features
 
-- Calculate trade-in values for hearing aids less than 5 years old with a sliding scale based on the original purchase price.
-- Special conditions for hearing aids purchased 5 years ago or more, with different values for those purchased directly from us and those not.
+- Calculates trade-in values for hearing aids less than 5 years old with a sliding scale based on the original purchase price, model, year purchase and with different values for those purchased directly from us and those not.
+- Special conditions for hearing aids purchased 5 years ago or more.
 
 ## Installation
 
-No installation is necessary. You can run this project directly from any modern web browser.
+No installation is necessary. You can run this project directly from any web browser.
 
 ## Usage
 
